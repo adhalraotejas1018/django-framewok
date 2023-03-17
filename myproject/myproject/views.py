@@ -1,8 +1,9 @@
-from django.http import HttpResponse
+from django.shortcuts import render
 
-def  index(request):
-    return HttpResponse("<h1> Hello</h1>")
-
+def index(request):
+    return render(request,'index.html')
 
 def about(request):
-    return HttpResponse("<h1>my inforamation<")
+    data={   'name':"RutVikk",
+              'age':'21',    }
+    return render(request,'about.html',data)
