@@ -4,7 +4,8 @@ def index(request):
     return render(request,'index.html')
 
 def about(request):
-    name=request.GET.get('name')
-    age=request.GET.get('age')
-    data={ 'name':name,'age':age }
+    n1=int(request.GET.get('num1'))
+    n2=int(request.GET.get('num2'))
+    result=n1+n2
+    data={ 'name':n1,'age':n2 ,'result':result}
     return render(request,'about.html',data)
