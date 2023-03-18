@@ -4,8 +4,10 @@ def index(request):
     return render(request,'index.html')
 
 def about(request):
-    n1=int(request.GET.get('num1'))
-    n2=int(request.GET.get('num2'))
-    result=n1+n2
-    data={ 'name':n1,'age':n2 ,'result':result}
+    fname=request.POST.get('fname',"first_name not enter")
+    lname=request.POST.get('lanme',"last_name not enter")
+    about_self=request.POST.get('textarea',"about not enter")
+    data={'fname':fname,
+          'lname':lname,
+          'about_self':about_self}
     return render(request,'about.html',data)
